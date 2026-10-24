@@ -1,28 +1,36 @@
-# temperature-prediction-ml
-Linear regression model to predict temperature from humidity.
+# Temperature Prediction
 
-## Objective
-Predict temperature from humidity sensor data using a supervised ML model.
+## Problem
+Predict the temperature of a location based on humidity sensor readings —
+estimating environmental conditions from a single atmospheric variable.
 
-## Dataset
-- Source: Sensor readings (~700,000 rows)
-- Features used: Humidity
+## Data
+- ~700,000 hourly sensor readings across multiple locations
+- Features: Humidity
 - Target: Temperature
+- Additional columns (sensor_id, lat, lon, pressure) not used in modelling
 
-## Approach
-- Exploratory Data Analysis (scatter plots, summary statistics)
-- Data cleaning (null removal)
-- Linear Regression via scikit-learn
-- Evaluation: MSE, RMSE, R² Score
-
-## Tech Stack
-Python, Pandas, NumPy, Matplotlib, Scikit-learn, Jupyter Notebook
+## Method
+- Isolated relevant columns and dropped null rows
+- 80/20 train-test split with random_state=42
+- Linear Regression to model the relationship between humidity and temperature
+- Priority metric: R² Score — measures how well humidity explains temperature variance
 
 ## Results
-| Metric | Value |
+| Metric | Score |
 |--------|-------|
-| MSE    | —     |
-| RMSE   | —     |
-| R²     | —     |
+| MSE    |       |
+| RMSE   |       |
+| R²     |       |
 
-> Fill in the actual metric values from your notebook output.
+> Run the notebook to populate the results above with your actual output values.
+
+## Stack
+Python, pandas, numpy, scikit-learn, matplotlib, seaborn
+
+## Run It
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
+jupyter notebook Temperature_Prediction_Test.ipynb
+```
+> Place `humidity.csv` in the same folder as the notebook before running.
